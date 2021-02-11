@@ -43,13 +43,13 @@ variable "enabled" {
 
 variable "namespace" {
   type        = string
-  default     = null
+  default     = "tef"
   description = "Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp'"
 }
 
 variable "environment" {
   type        = string
-  default     = null
+  default     = "dev"
   description = "Environment, e.g. 'uw2', 'us-west-2', OR 'prod', 'staging', 'dev', 'UAT'"
 }
 
@@ -61,7 +61,7 @@ variable "stage" {
 
 variable "name" {
   type        = string
-  default     = null
+  default     = "app"
   description = "Solution name, e.g. 'app' or 'jenkins'"
 }
 
@@ -94,7 +94,7 @@ variable "additional_tag_map" {
 
 variable "label_order" {
   type        = list(string)
-  default     = null
+  default     = ["namespace", "environment", "name"]
   description = <<-EOT
     The naming order of the id output and Name tag.
     Defaults to ["namespace", "environment", "stage", "name", "attributes"].
